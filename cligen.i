@@ -4,7 +4,7 @@
 #include <cligen/cligen.h>
 %}
 
-cligen_handle cligen_init(void);
-int cligen_check(cligen_handle);
-int cligen_exit(cligen_handle);
+%include <cligen/cligen_handle.h>
+%include <cligen/cligen_syntax.h>
+%include <cligen/cligen_util.h>
 
