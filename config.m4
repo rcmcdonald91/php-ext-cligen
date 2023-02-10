@@ -1,21 +1,7 @@
-dnl config.m4 for extension cligen
-
-dnl Comments in this file start with the string 'dnl'.
-dnl Remove where necessary.
-
-dnl If your extension references something external, use 'with':
-
-dnl PHP_ARG_WITH([cligen],
-dnl   [for cligen support],
-dnl   [AS_HELP_STRING([--with-cligen],
-dnl     [Include cligen support])])
-
-dnl Otherwise use 'enable':
-
 PHP_ARG_ENABLE([cligen],
   [whether to enable cligen support],
-  [AS_HELP_STRING([--enable-cligen],
-    [Enable cligen support])],
+  [AS_HELP_STRING([--with-cligen],
+    [Include cligen support])],
   [no])
 
 if test "$PHP_CLIGEN" != "no"; then
@@ -91,4 +77,6 @@ if test "$PHP_CLIGEN" != "no"; then
   AC_DEFINE(HAVE_CLIGEN, 1, [ Have cligen support ])
 
   PHP_NEW_EXTENSION(cligen, cligen.c, $ext_shared)
+
+  PHP_ADD_MAKEFILE_FRAGMENT()
 fi
