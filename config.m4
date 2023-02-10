@@ -76,7 +76,9 @@ if test "$PHP_CLIGEN" != "no"; then
   dnl In case of no dependencies
   AC_DEFINE(HAVE_CLIGEN, 1, [ Have cligen support ])
 
-  PHP_NEW_EXTENSION(cligen, cligen.c, $ext_shared)
+  PHP_ADD_LIBRARY(cligen,, CLIGEN_SHARED_LIBADD)
 
+  PHP_NEW_EXTENSION(cligen, cligen_wrap.c, $ext_shared)
+  PHP_SUBST(CLIGEN_SHARED_LIBADD)
   PHP_ADD_MAKEFILE_FRAGMENT()
 fi
