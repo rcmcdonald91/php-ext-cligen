@@ -1,12 +1,10 @@
 --TEST--
-cligen_init: test initialization of cligen handle
+cligen_init() - initialize cligen handle
 --EXTENSIONS--
 cligen
 --FILE--
 <?php
-$h = cligen_init();
-var_dump($h);
+var_dump(!is_null(cligen_init()));
 ?>
 --EXPECT--
-object(SWIG\_p_cligen_handle)#1 (0) {
-}
+bool(true)

@@ -1,11 +1,11 @@
 --TEST--
-cligen_exit() - free cligen handle
+cligen_check() - check cligen handle validity
 --EXTENSIONS--
 cligen
 --FILE--
 <?php
 $h = cligen_init();
-var_dump(cligen_exit($h) == 0);
+var_dump(cligen_check($h) == 0);
 ?>
 --EXPECT--
 bool(true)
